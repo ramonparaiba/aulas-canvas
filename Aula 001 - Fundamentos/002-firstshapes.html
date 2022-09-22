@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Shapes</title>
+    <meta name="author" content="Pablo Ramon - @ramonparaiba @elpabloramon">
+    <meta name="description" content="introdução ao uso de canvas HTML">
+    <meta name="keywords" content="canvas, html, javascript, css">
+    <style>
+        *{ text-align: center;}
+        canvas{ 
+            background-color: rgb(239, 239, 239);
+            border: 5px solid;
+        }
+    </style>
+</head>
+<body>
+    <h1>Primeiras formas</h1>
+    <canvas width="600" height="600"></canvas>
+  
+
+    <script>
+        let canvas = document.querySelector('canvas');
+        let ctx = canvas.getContext('2d');
+
+        //quadrado verde
+        ctx.fillStyle ="green";
+        ctx.fillRect(50, 50, 100, 100);
+
+        //quadrado vermelho
+        ctx.fillStyle ="red";
+        ctx.fillRect(250, 50, 100, 100);
+
+        //Linhas e superfícies
+        ctx.strokeStyle = "#bbaa00";
+        ctx.strokeRect(50, 200, 100, 100);
+        ctx.lineWidth = 4;
+        ctx.strokeRect(250, 200, 100, 100);
+
+        //Caminhos
+        //Triângulo Aberto
+        ctx.beginPath();
+        ctx.strokeStyle = "#5f27cd";
+        ctx.moveTo(50, 400);
+        ctx.lineTo(100, 350);
+        ctx.lineTo(150, 400);
+        ctx.lineTo(50, 400);
+        ctx.stroke();
+
+        //Triângulo Fechado
+        ctx.beginPath();
+        ctx.fillStyle = "#10ac84"
+        ctx.moveTo(200, 400);
+        ctx.lineTo(250, 350);
+        ctx.lineTo(300, 400);
+        ctx.lineTo(200, 400);
+        ctx.fill();
+
+
+        //linhas paralelas
+        ctx.beginPath();
+        
+        ctx.strokeStyle = "#f368e0";
+        for (let i = 10; i < canvas.height/2; i+=10) {
+            ctx.lineWidth = Math.random(5);
+            ctx.moveTo(400, i);
+            ctx.lineTo(550, i);        
+        }        
+        ctx.stroke();
+
+        //curvas - quadraticCurveTo()
+        ctx.beginPath();
+        ctx.moveTo(400, 400);
+        ctx.quadraticCurveTo(350, 450, 350, 400);
+        ctx.lineTo(500, 500);
+        ctx.closePath();
+        ctx.stroke();
+
+
+    </script>
+</body>
+</html>
