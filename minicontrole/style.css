@@ -1,4 +1,21 @@
+*{ 
+    text-align: center;
+    font-family: 'VT323', monospace;
+}
 canvas{
     border: 10px solid #e8506f;
     background-color: #f0f0b3;
+}
+#controles button{
+    padding: 1% 4%;
+    width: 100px;
+    height: auto;
+    border: none;    
+    background-color: #e8506f;
+    font-size: 28pt;
+    color: #f0f0b3;
+    
+}
+#controles button:hover{
+    background-color: #f4936e;
 }
